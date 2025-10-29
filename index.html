@@ -5,150 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gofrería TeLasTragas 🧇</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root{
+      --bg: #fdf8f4;
+      --dark: #3b2f2f;
+      --accent: #00d1d1; /* color principal (editable) */
+      --muted: #666;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fdf8f4;
-      color: #333;
-    }
-    header {
-      background-color: #3b2f2f;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      color: cyan;
-      font-size: 1.8rem;
-    }
-    nav a {
-      color: white;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: cyan;
-    }
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    h2 {
-      color: #3b2f2f;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      border-bottom: 3px solid cyan;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-    #inicio {
-      background: url('https://images.unsplash.com/photo-1605475128023-9b2b8b836dbb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      color: white;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.6);
-    }
-    #inicio h1 {
-      font-size: 3rem;
-      color: cyan;
-    }
-    #inicio p {
-      font-size: 1.3rem;
-      margin-top: 1rem;
-    }
-    .btn {
-      margin-top: 2rem;
-      background-color: cyan;
-      color: #3b2f2f;
-      padding: 0.8rem 1.6rem;
-      border: none;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background-color: #2ad7d7;
-      transform: scale(1.05);
-    }
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .menu-item {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: 0.3s;
-    }
-    .menu-item:hover {
-      transform: translateY(-5px);
-    }
-    .menu-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .menu-item h3 {
-      margin: 1rem 0 0.5rem;
-      color: #3b2f2f;
-    }
-    .menu-item p {
-      color: #666;
-      margin-bottom: 1rem;
-    }
-    #sobre {
-      background-color: #fff7f2;
-    }
-    #sobre p {
-      max-width: 800px;
-      margin: 1rem auto;
-      line-height: 1.8;
-    }
-    #contacto {
-      background-color: #3b2f2f;
-      color: white;
-    }
-    .contact-info {
-      margin-top: 2rem;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-    footer {
-      background-color: #241c1c;
-      color: #aaa;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 768px) {
-      #inicio h1 {
-        font-size: 2.2rem;
-      }
-      #inicio p {
-        font-size: 1rem;
-      }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, Poppins, system-ui, sans-serif;background:var(--bg);color:#222;line-height:1.5}
+    header{background:var(--dark);color:white;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;position:sticky;top:0;z-index:1000}
+    header h1{font-family:Pacifico,cursive;color:var(--accent);font-size:1.6rem}
+    nav a{color:white;margin-left:1rem;text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .container{max-width:1100px;margin:0 auto;padding:2rem}
+    #inicio{background:url('https://images.unsplash.com/photo-1605475128023-9b2b8b836dbb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;color:white;height:72vh;display:flex;align-items:center;justify-content:center;border-radius:8px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.15)}
+    #inicio .content{background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.35));padding:2rem;border-radius:8px}
+    #inicio h2{font-size:2.2rem;color:var(--accent);margin-bottom:0.5rem}
+    #inicio p{font-size:1.1rem}
+    .btn{background:var(--accent);color:var(--dark);padding:.6rem 1rem;border-radius:999px;border:none;cursor:pointer;font-weight:700}
+    section{padding:3rem 0}
+    h2.section-title{color:var(--dark);display:inline-block;border-bottom:4px solid var(--accent);padding-bottom:.4rem;margin-bottom:1rem}
+
+    /* Menú */
+    .menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+    .card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform .18s}
+    .card:hover{transform:translateY(-6px)}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .card .body{padding:1rem}
+    .card h3{color:var(--dark);margin-bottom:.4rem}
+    .card p{color:var(--muted);margin-bottom:.8rem}
+    .tags{display:flex;gap:.5rem;flex-wrap:wrap}
+    .tag{background:rgba(0,0,0,0.06);padding:.25rem .5rem;border-radius:999px;font-size:.8rem}
+
+    /* Formulario para añadir items */
+    .add-panel{background:#fff9f6;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.03);display:grid;grid-template-columns:1fr 300px;gap:1rem}
+    .field{margin-bottom:.6rem}
+    label{display:block;font-weight:600;margin-bottom:.25rem}
+    input[type=text], textarea, select{width:100%;padding:.5rem;border-radius:6px;border:1px solid #eee}
+    input[type=file]{display:block}
+    .preview{border-radius:8px;overflow:hidden;height:200px;background:linear-gradient(90deg,#fff,#f7f7f7);display:flex;align-items:center;justify-content:center;color:#aaa}
+
+    /* Controls */
+    .controls{display:flex;gap:.6rem;align-items:center}
+    .color-input{width:40px;height:40px;border-radius:6px;border:none;padding:0}
+
+    /* Contacto */
+    #contacto{background:var(--dark);color:white;padding:2rem;border-radius:8px}
+    .contact-info p{margin:.4rem 0}
+
+    footer{margin-top:2rem;padding:1rem;text-align:center;color:#666}
+
+    /* Responsive */
+    @media(max-width:900px){.add-panel{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -157,50 +65,211 @@
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#menu">Menú</a>
-      <a href="#sobre">Sobre Nosotros</a>
+      <a href="#sobre">Sobre</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
-  <section id="inicio">
-    <h1>Bienvenido a Gofrería TeLasTragas</h1>
-    <p>Donde el olor a gofre recién hecho te conquista desde la puerta 🍯</p>
-    <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Ver el Menú</button>
-  </section>
-  <section id="menu">
-    <h2>Menú</h2>
-    <div class="menu">
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b50b18?auto=format&fit=crop&w=800&q=80" alt="Gofre clásico">
-        <h3>Gofre Clásico</h3>
-        <p>Servido con miel, mantequilla y mucho amor.</p>
+
+  <main class="container">
+    <section id="inicio">
+      <div class="content">
+        <h2>Bienvenido a Gofrería TeLasTragas</h2>
+        <p>Gofres artesanales, batidos y bebidas refrescantes. Crea tu combo, sube tus fotos y personaliza los colores.</p>
+        <div style="margin-top:1rem;display:flex;gap:.6rem;justify-content:center">
+          <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Ver Menú</button>
+          <button class="btn" onclick="document.getElementById('add').scrollIntoView({behavior:'smooth'})">Añadir</button>
+        </div>
       </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" alt="Gofre con chocolate">
-        <h3>Gofre con Chocolate</h3>
-        <p>Cubierto con salsa de chocolate artesanal y trozos de nuez.</p>
+    </section>
+
+    <!-- MENÚ -->
+    <section id="menu">
+      <h2 class="section-title">Menú: Gofres, Batidos y Más</h2>
+
+      <div style="margin:1rem 0;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+        <input id="search" placeholder="Buscar gofres, batidos..." style="padding:.5rem;border-radius:6px;border:1px solid #eee;width:220px" oninput="filterMenu()" />
+        <select id="filter" onchange="filterMenu()" style="padding:.5rem;border-radius:6px;border:1px solid #eee">
+          <option value="all">Todo</option>
+          <option value="gofre">Gofre</option>
+          <option value="batido">Batido</option>
+          <option value="refresco">Refresco</option>
+        </select>
+        <button class="btn" onclick="fetchAIImage()">Generar foto IA (muestra)</button>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:.4rem">
+          <label style="font-weight:600">Color:</label>
+          <input type="color" id="accentPicker" class="color-input" value="#00d1d1" onchange="changeAccent(this.value)" title="Cambiar color principal" />
+        </div>
       </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1617196034798-438d61a09a3a?auto=format&fit=crop&w=800&q=80" alt="Gofre con frutas">
-        <h3>Gofre Frutal</h3>
-        <p>Fresas, plátano y crema chantilly sobre gofre crujiente.</p>
+
+      <div id="menuGrid" class="menu"></div>
+    </section>
+
+    <!-- PANEL AÑADIR NUEVO ELEMENTO -->
+    <section id="add">
+      <h2 class="section-title">Añadir o subir un Gofre / Bebida</h2>
+      <div class="add-panel">
+        <div>
+          <div class="field">
+            <label>Tipo</label>
+            <select id="newType">
+              <option value="gofre">Gofre</option>
+              <option value="batido">Batido</option>
+              <option value="refresco">Refresco</option>
+              <option value="combo">Combo</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Nombre</label>
+            <input id="newName" type="text" placeholder="Ej: Gofre de Nutella con fresas" />
+          </div>
+          <div class="field">
+            <label>Descripción</label>
+            <textarea id="newDesc" rows="3" placeholder="Descripción breve"></textarea>
+          </div>
+          <div class="field">
+            <label>Etiquetas (separadas por coma)</label>
+            <input id="newTags" type="text" placeholder="Ej: dulce, vegano, sin-gluten" />
+          </div>
+          <div class="field">
+            <label>Imagen (subir desde tu equipo)</label>
+            <input id="newImage" type="file" accept="image/*" />
+          </div>
+          <div style="display:flex;gap:.5rem;margin-top:.6rem">
+            <button class="btn" onclick="addItem()">Agregar al menú</button>
+            <button class="btn" onclick="addSample()">Agregar ejemplo</button>
+          </div>
+        </div>
+        <div>
+          <label>Previsualización</label>
+          <div id="imgPreview" class="preview">Arrastra o sube una imagen</div>
+          <div style="margin-top:.8rem;color:#666;font-size:.9rem">También puedes generar una imagen de ejemplo con "Generar foto IA" para probar.</div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="sobre">
-    <h2>Sobre Nosotros</h2>
-    <p>En <strong>TeLasTragas</strong> creemos que cada bocado debe ser un abrazo dulce.  Nuestros gofres se preparan con ingredientes frescos, masa artesanal y mucho cariño.  Nacimos con la idea de traer un pedacito de felicidad a cada mesa, un gofre a la vez. 💛</p>
-  </section>
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <div class="contact-info">
-      <p>📍 Calle Dulce #123, Ciudad Gofre</p>
-      <p>📞 +34 600 123 456</p>
-      <p>📧 contacto@telastragas.com</p>
-      <p>🕐 Abierto de 9:00 a 20:00</p>
-    </div>
-  </section>
-  <footer>
-    © 2025 Gofrería TeLasTragas — Hecho con amor y sirope 💙
-  </footer>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre">
+      <h2 class="section-title">Sobre Nosotros</h2>
+      <p>En <strong>TeLasTragas</strong> hacemos gofres artesanales con ingredientes frescos. Tenemos opciones clásicas, frutales, veganas y sin gluten. Además ofrecemos batidos, refrescos y combos para compartir. Puedes personalizar tu pedido y subir tu propia foto para acompañarlo en nuestra galería.</p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h2 class="section-title" style="color:white;border-color:rgba(255,255,255,0.15)">Contacto</h2>
+      <div class="contact-info" style="color:#fff">
+        <p>📍 Calle Dulce #123, Ciudad Gofre</p>
+        <p>📞 +34 600 123 456</p>
+        <p>📧 contacto@telastragas.com</p>
+        <p>🕐 Abierto de 9:00 a 20:00</p>
+      </div>
+    </section>
+
+    <footer>© 2025 Gofrería TeLasTragas — Hecho con amor y sirope 💙</footer>
+  </main>
+
+  <script>
+    // Datos iniciales del menú (más variados, sin mojitos)
+    const menuData = [
+      {type:'gofre', name:'Gofre Clásico', desc:'Miel, mantequilla y mucho amor.', tags:['dulce','clásico'], img:'https://images.unsplash.com/photo-1617196034796-73dfa7b50b18?auto=format&fit=crop&w=800&q=80'},
+      {type:'gofre', name:'Gofre Nutella y Fresas', desc:'Nutella caliente y fresas frescas.', tags:['chocolate','fruta'], img:'https://images.unsplash.com/photo-1617196034798-438d61a09a3a?auto=format&fit=crop&w=800&q=80'},
+      {type:'gofre', name:'Gofre Vegano', desc:'Con sirope de arce y frutas de temporada.', tags:['vegano'], img:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80'},
+      {type:'batido', name:'Batido Tropical', desc:'Mango, piña y yogur.', tags:['frío','natural'], img:'https://images.unsplash.com/photo-1592928307855-3cd09ca7f9fe?auto=format&fit=crop&w=800&q=80'},
+      {type:'refresco', name:'Limonada Casera', desc:'Refrescante con menta.', tags:['refresco'], img:'https://images.unsplash.com/photo-1562440499-64a9f0f6d7fb?auto=format&fit=crop&w=800&q=80'}
+    ];
+
+    const menuGrid = document.getElementById('menuGrid');
+
+    function renderMenu(items = menuData){
+      menuGrid.innerHTML = '';
+      items.forEach((it, i)=>{
+        const card = document.createElement('div');card.className='card';
+        card.innerHTML = `
+          <img src="${it.img}" alt="${escapeHtml(it.name)}">
+          <div class="body">
+            <h3>${escapeHtml(it.name)}</h3>
+            <p>${escapeHtml(it.desc)}</p>
+            <div class="tags">${(it.tags||[]).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
+          </div>
+        `;
+        menuGrid.appendChild(card);
+      });
+    }
+
+    renderMenu();
+
+    // Búsqueda y filtro
+    function filterMenu(){
+      const q = document.getElementById('search').value.toLowerCase();
+      const f = document.getElementById('filter').value;
+      const filtered = menuData.filter(it=>{
+        if(f!=='all' && it.type!==f) return false;
+        return (it.name+it.desc+(it.tags||[]).join(' ')).toLowerCase().includes(q);
+      });
+      renderMenu(filtered);
+    }
+
+    // Añadir item desde formulario
+    document.getElementById('newImage').addEventListener('change', (e)=>{
+      const file = e.target.files[0];
+      if(!file) return; const url=URL.createObjectURL(file);
+      document.getElementById('imgPreview').innerHTML = `<img src="${url}" style="max-width:100%;height:100%;object-fit:cover">`;
+      // guardamos temporalmente la url en el input dataset
+      document.getElementById('newImage').dataset.preview = url;
+    });
+
+    function addItem(){
+      const type=document.getElementById('newType').value;
+      const name=document.getElementById('newName').value.trim();
+      const desc=document.getElementById('newDesc').value.trim();
+      const tags=document.getElementById('newTags').value.split(',').map(s=>s.trim()).filter(Boolean);
+      let img = document.getElementById('newImage').dataset.preview || 'https://images.unsplash.com/photo-1605475128023-9b2b8b836dbb?auto=format&fit=crop&w=800&q=80';
+      if(!name) {alert('Escribe un nombre para el producto');return}
+      menuData.unshift({type,name,desc,tags,img});
+      renderMenu();
+      // limpiar form
+      document.getElementById('newName').value='';document.getElementById('newDesc').value='';document.getElementById('newTags').value='';document.getElementById('newImage').value='';document.getElementById('imgPreview').innerText='Arrastra o sube una imagen';
+      alert('Elemento agregado al menú (solo en esta vista local). Si quieres hacerlo permanente, súbelo a tu repositorio.');
+    }
+
+    function addSample(){
+      menuData.unshift({type:'gofre',name:'Gofre del Chef',desc:'Especial con topping secreto y helado.',tags:['especial','nuevo'],img:'https://images.unsplash.com/photo-1546549037-8f9a3b3d8c9b?auto=format&fit=crop&w=800&q=80'});
+      renderMenu();
+    }
+
+    // Simple escape para texto
+    function escapeHtml(str){return String(str).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]});}
+
+    // Cambiar color de acento en tiempo real
+    function changeAccent(color){document.documentElement.style.setProperty('--accent',color);document.getElementById('accentPicker').value = color}
+
+    // Generar foto 'IA' de muestra (usa Unsplash random queries como simulación)
+    async function fetchAIImage(){
+      // queries posibles
+      const queries = ['waffle','waffle plate','waffle with fruits','waffle closeup','milkshake','smoothie'];
+      const q = queries[Math.floor(Math.random()*queries.length)];
+      const url = `https://source.unsplash.com/featured/?${encodeURIComponent(q)}`;
+      // añadimos como item de ejemplo
+      menuData.unshift({type:'gofre',name:`Generado: ${q}`,desc:'Imagen de ejemplo generada automáticamente.',tags:['IA','muestra'],img:url});
+      renderMenu();
+    }
+
+    // Drag & drop para la previsualización (opcional)
+    const preview = document.getElementById('imgPreview');
+    ['dragenter','dragover'].forEach(ev=>preview.addEventListener(ev,e=>{e.preventDefault();preview.style.opacity=.9}));
+    ['dragleave','drop'].forEach(ev=>preview.addEventListener(ev,e=>{e.preventDefault();preview.style.opacity=1}));
+    preview.addEventListener('drop', e=>{
+      const f = e.dataTransfer.files && e.dataTransfer.files[0];
+      if(!f) return; document.getElementById('newImage').files = e.dataTransfer.files;
+      const url = URL.createObjectURL(f); document.getElementById('imgPreview').innerHTML = `<img src="${url}" style="max-width:100%;height:100%;object-fit:cover">`;
+      document.getElementById('newImage').dataset.preview = url;
+    });
+
+    // Guardar estado local (opcional): usamos localStorage para que tus añadidos permanezcan en el navegador
+    function saveLocal(){ localStorage.setItem('menuData', JSON.stringify(menuData)); }
+    function loadLocal(){ try{ const d=JSON.parse(localStorage.getItem('menuData')); if(Array.isArray(d) && d.length) { menuData.splice(0, menuData.length, ...d); renderMenu(); } }catch(e){} }
+    window.addEventListener('beforeunload', saveLocal);
+    loadLocal();
+  </script>
 </body>
 </html>
+
